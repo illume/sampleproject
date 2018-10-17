@@ -136,7 +136,14 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['peppercorn'],  # Optional
+    #
+    # For environment markers see here:
+    # https://www.python.org/dev/peps/pep-0508/#environment-markers
+    install_requires=[
+        'peppercorn',
+        'pygame; sys.platform=="linux2"',
+        'numpy; sys.platform=="darwin"',
+    ],  # Optional
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
